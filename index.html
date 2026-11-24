@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrew Mullins | Communications, content, and media production</title>
+<meta name="description" content="Charlotte-based communications professional and UNC Charlotte graduate (B.A. Communication Studies, Video Production Certificate). Video production, social media, print design, and program coordination.">
+<link rel="canonical" href="https://www.andrewmullins.info/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Andrew Mullins">
+<meta property="og:title" content="Andrew Mullins">
+<meta property="og:description" content="Communications professional in Charlotte, NC. Content creation, media production, and organizational communication.">
+<meta property="og:url" content="https://www.andrewmullins.info/">
+<meta property="og:image" content="https://www.andrewmullins.info/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #F3F4F1;
+    --ink: #15181A;
+    --muted: #5B6166;
+    --frame: #E2E5DF;
+    --accent: #0B5D3B;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-thickness 0.15s;
+  }
+  a:hover { text-decoration-thickness: 3px; }
+  a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Page frame: sticky identity rail on the left, work on the right */
+  .shell {
+    display: grid;
+    grid-template-columns: minmax(230px, 290px) minmax(0, 1fr);
+    column-gap: clamp(2rem, 6vw, 5.5rem);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 2.5rem) 5rem;
+  }
+
+  .rail {
+    position: sticky;
+    top: clamp(1.5rem, 4vw, 3.5rem);
+    align-self: start;
+  }
+
+  .headshot {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--frame);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  .rail h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 4.2vw, 3.3rem);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin: 0 0 1rem;
+  }
+
+  .descriptor {
+    font-family: var(--display);
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+    max-width: 26ch;
+  }
+
+  .links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--display);
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+  .links li + li { margin-top: 0.4rem; }
+
+  main { min-width: 0; }
+
+  .intro p {
+    max-width: 62ch;
+    margin: 0 0 1.2em;
+  }
+  .intro p:first-child {
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  /* Sections */
+  .block {
+    margin-top: clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .block h2 {
+    font-family: var(--display);
+    font-weight: 650;
+    font-size: clamp(1.6rem, 2.6vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.35rem;
+  }
+
+  .block p {
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .block .role {
+    font-family: var(--display);
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0 0 0.9rem;
+  }
+
+  /* Video and image frames */
+  .frame {
+    display: block;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--frame);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+  }
+  .frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .frame.video::after {
+    content: "Watch";
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+  }
+  .frame.video:hover::after,
+  .frame.video:focus-visible::after {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  .gallery {
+    columns: 2;
+    column-gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .gallery figure {
+    margin: 0 0 1rem;
+    min-height: 160px;
+    break-inside: avoid;
+    background: var(--frame);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Skills */
+  .skills dl { margin: 1rem 0 0; max-width: 62ch; }
+  .skills dt {
+    font-family: var(--display);
+    font-weight: 600;
+    margin-top: 1.1rem;
+  }
+  .skills dd { margin: 0.15rem 0 0; }
+
+  .contact .links { margin-top: 1.1rem; }
+
+  @media (max-width: 860px) {
+    .shell {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 2.5rem;
+    }
+    .rail { position: static; }
+    .headshot { max-width: 120px; }
+    .descriptor { max-width: 40ch; }
+  }
+
+  @media (max-width: 520px) {
+    .gallery { columns: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+  <aside class="rail">
+    <img class="headshot" src="images/Headshot.jpg" alt="Portrait of Andrew Mullins" width="440" height="440">
+    <h1>Andrew Mullins</h1>
+    <p class="descriptor">Communications professional in Charlotte, NC. Content creation, media production, and organizational communication.</p>
+    <ul class="links">
+      <li><a href="mailto:andrewmullins117@gmail.com">andrewmullins117@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/andrewmullins117/" rel="noopener">linkedin.com/in/andrewmullins117</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="intro">
+      <p>I’m a Charlotte-based communications professional and December 2025 graduate of UNC Charlotte, where I earned a B.A. in Communication Studies with a concentration in Media &amp; Technology and a Certificate in Video Production.</p>
+      <p>My background spans media production, print design, program coordination, and social media management. I bring a combination of creative and operational skills to communications work: comfortable moving between producing original content, coordinating logistics across stakeholders, and engaging directly with audiences and customers.</p>
+      <p>I’m currently seeking opportunities in communications, content, media production, or related fields in the Charlotte area, and I bring hands-on experience across each of those disciplines.</p>
+    </section>
+
+    <article class="block">
+      <a class="frame video" href="https://youtu.be/wG9fTcXtSEw" target="_blank" rel="noopener" aria-label="Watch Truer Crime">
+        <img src="https://img.youtube.com/vi/wG9fTcXtSEw/maxresdefault.jpg" alt="Title card from Truer Crime" width="1600" height="900" loading="lazy">
+      </a>
+      <h2>Truer Crime</h2>
+      <p class="role">Video podcast, 2025. Senior thesis at UNC Charlotte.</p>
+      <p>A fictional true crime video podcast that follows a seemingly grounded narrative until it gradually unravels into something impossible. As sole producer, I was responsible for concept development, scripting, filming, editing, and delivery, completing the full production cycle in approximately four months. The project required significant independent decision-making under time constraints and demonstrated end-to-end production capability.</p>
+    </article>
+
+    <article class="block">
+      <h2><a href="https://x.com/Creeper_HCS" target="_blank" rel="noopener">HCS Creeper</a></h2>
+      <p class="role">Social media account, 2021 to present.</p>
+      <p>HCS Creeper originated at the 2021 Halo Infinite Kickoff Major in Raleigh, NC, where a spontaneous moment during a live esports broadcast generated significant audience engagement online. Recognizing an opportunity, I created and managed a multi-platform social media presence across Twitter (now X), Instagram, and TikTok, growing the account to 4,000+ followers at peak through consistent, platform-native content creation and community engagement. The account’s growth reflects an ability to identify audience interest, develop a content voice, and build an engaged following from the ground up.</p>
+    </article>
+
+    <article class="block">
+      <h2>The Only Fan</h2>
+      <p class="role">Short horror film, 2025. UNC Charlotte Video Production program.</p>
+      <p>A narrative short horror film that I co-directed and edited. Working with a crew of five, I managed creative direction, on-set coordination, and post-production editing from pre-production through a formal class screening.</p>
+    </article>
+
+    <article class="block">
+      <h2>Graphic design in Adobe InDesign</h2>
+      <p class="role">Print design, 2024. Media &amp; Technology coursework.</p>
+      <p>A collection of print design work including a university history infographic, a study abroad promotional flyer, and a magazine cover and interior spread. Each piece was developed with an emphasis on layout, typography, and visual hierarchy as tools for clear and intentional communication.</p>
+      <div class="gallery">
+        <figure><img src="images/Infographic.png" alt="University history infographic" loading="lazy"></figure>
+        <figure><img src="images/Study_Abroad_Flyer.jpg" alt="Study abroad promotional flyer" loading="lazy"></figure>
+        <figure><img src="images/Magazine_Cover.jpg" alt="Magazine cover design" loading="lazy"></figure>
+        <figure><img src="images/Magazine_Spread.jpg" alt="Magazine interior spread" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <section class="block skills">
+      <h2>Skills</h2>
+      <dl>
+        <dt>Tools and software</dt>
+        <dd>Adobe InDesign, Adobe Premiere Pro, Google Workspace, Canva, Instagram and X scheduling tools, AI tools (Claude, ChatGPT, Midjourney)</dd>
+        <dt>Core competencies</dt>
+        <dd>Written and verbal communication, content planning and creation, media production, project coordination, team leadership, customer engagement</dd>
+      </dl>
+    </section>
+
+    <section class="block contact">
+      <h2>Contact</h2>
+      <p>I am actively seeking communications, content, media, or related opportunities in the Charlotte area. I welcome inquiries from hiring managers, recruiters, and collaborators.</p>
+      <ul class="links">
+        <li><a href="mailto:andrewmullins117@gmail.com">andrewmullins117@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/andrewmullins117/" rel="noopener">linkedin.com/in/andrewmullins117</a></li>
+      </ul>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
